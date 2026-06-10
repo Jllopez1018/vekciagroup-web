@@ -16,6 +16,7 @@ export default function Servicios() {
         "Responsabilidad Civil",
         "Gastos Médicos",
       ],
+      active: true
     },
     {
       id: 2,
@@ -32,6 +33,7 @@ export default function Servicios() {
         "Telemetría",
         ""
       ],
+      active: false
     },
     {
       id: 3,
@@ -48,7 +50,9 @@ export default function Servicios() {
         "Dashboards",
         "Landing Pages",
       ],
+      active: true
     },
+  
   ];
 
   return (
@@ -115,7 +119,7 @@ export default function Servicios() {
         {/* Servicios */}
         <div className="space-y-28">
 
-          {servicios.map((servicio, index) => (
+          {servicios.filter(service => service.active).map((servicio, index) => (
             <div
               key={servicio.id}
               className="

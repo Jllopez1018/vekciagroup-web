@@ -16,6 +16,7 @@ export default function Servicios() {
         "Responsabilidad Civil",
         "Gastos Médicos",
       ],
+      url: "https://seguros.vekcia.com/",
       active: true
     },
     {
@@ -30,9 +31,9 @@ export default function Servicios() {
         "Geocercas",
         "Alertas",
         "Monitoreo 24/7",
-        "Telemetría",
-        ""
+        "Telemetría"        
       ],
+      url: "https://tracking.vekcia.com/",
       active: false
     },
     {
@@ -50,6 +51,7 @@ export default function Servicios() {
         "Dashboards",
         "Landing Pages",
       ],
+      url: "https://tech.vekcia.com/",
       active: true
     },
   
@@ -244,7 +246,7 @@ export default function Servicios() {
                 </div>
 
                 <a
-                  href="#"
+                  href= {servicio.url}
                   className="
                     inline-flex
                     items-center

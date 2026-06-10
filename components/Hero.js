@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import heroSlides from "../data/heroSlides";
-
+const slides = heroSlides.filter(slide => slide.active);
 export default function Hero() {
   return (
     <section className="hero">
@@ -27,7 +27,8 @@ export default function Hero() {
         navigation
         loop
       >
-        {heroSlides.map((slide, index) => (
+        
+        {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
               className="hero-slide"
@@ -67,6 +68,37 @@ export default function Hero() {
                 </h2>
 
                 <p>{slide.subtitle}</p>
+
+                  <a
+                  href="#servicios"
+                  className="
+                    inline-flex
+                    items-center
+                    px-6
+                    py-3
+                    mt-5
+                    rounded-full
+                    bg-slate-900
+                    text-white
+                    font-semibold
+                    hover:bg-slate-800
+                    transition
+                  "
+                >
+                  Conocer más
+
+                  <span
+                    className="
+                      transition-transform
+                      duration-300
+                      group-hover:translate-x-2
+                    "
+                  >
+                    →
+                  </span>
+
+                </a>
+
               </div>
             </div>
           </SwiperSlide>

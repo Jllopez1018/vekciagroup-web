@@ -1,0 +1,19 @@
+{
+  "name": "vekcia-landing",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "aos": "^2.3.4",
+    "lucide-react": "^1.17.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "swiper": "^12.2.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

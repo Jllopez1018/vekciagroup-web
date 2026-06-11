@@ -9,7 +9,21 @@ const montserrat = Montserrat({
 export const metadata = {
   title: 'VEKCIA Group | Tecnología, Seguros y Soluciones Empresariales',
   description:
-    'Grupo empresarial especializado en tecnología, seguros y transformación digital. Ayudamos a empresas a crecer mediante software, automatización, análisis de datos y soluciones de protección patrimonial.'
+    'Grupo empresarial especializado en tecnología, seguros, rastreo GPS y transformación digital. Impulsamos empresas mediante software, automatización, análisis de datos y soluciones estratégicas para su crecimiento.',
+  keywords: [
+    'vekcia group',
+    'grupo empresarial',
+    'tecnologia',
+    'seguros',
+    'gps',
+    'desarrollo de software',
+    'transformacion digital',
+    'automatizacion',
+    'inteligencia artificial',
+    'telemetria',
+    'consultoria empresarial',
+    'soluciones empresariales'
+  ]
 }
 
 export default function RootLayout({ children }) {

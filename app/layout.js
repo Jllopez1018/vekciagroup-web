@@ -23,7 +23,12 @@ export const metadata = {
     'telemetria',
     'consultoria empresarial',
     'soluciones empresariales'
-  ]
+  ],
+  icons: {
+    icon: "/logos/logo-fav.png",
+    shortcut: "/logos/logo-fav.png",
+    apple: "/logos/logo-fav.png",
+  }
 }
 
 export default function RootLayout({ children }) {

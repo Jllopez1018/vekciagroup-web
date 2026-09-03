@@ -1,83 +1,75 @@
 import Image from "next/image";
 
-export default function Servicios() {
-  const servicios = [
+export default function Proyectos() {
+  const proyectos = [
     {
       id: 1,
       numero: "01",
-      type: "Desarrollo de Software",
-      image: "/images/servicios/software.jpg",
-      title: "Desarrollo de Software a la Medida",
+      categoria: "Sistema Empresarial",
+      title: "CRM Seguros",
       description:
-        "Diseñamos y desarrollamos soluciones de software adaptadas a los procesos, objetivos y necesidades específicas de cada empresa. Creamos herramientas escalables que ayudan a optimizar operaciones, automatizar tareas y mejorar la productividad.",
-      bullets: [
-        "Aplicaciones Web",
-        "Sistemas Administrativos",
-        "Plataformas Empresariales",
-        "APIs y Servicios",
-        "Bases de Datos",
-        "Desarrollo a la Medida",
+        "Sistema para llevar el control de pólizas, clientes, prospectos y tareas desde un solo lugar, facilitando la operación y el seguimiento comercial.",
+      image: "/images/proyectos/crm-seguros.jpg",
+      tags: [
+        "Pólizas",
+        "Clientes",
+        "Prospectos",
+        "Tareas",
       ],
     },
 
     {
       id: 2,
       numero: "02",
-      type: "Presencia Digital",
-      image: "/images/servicios/web.jpg",
-      title: "Sitios Web y Presencia Digital",
+      categoria: "Rastreo GPS",
+      title: "Tracking GPS",
       description:
-        "Creamos sitios web profesionales y plataformas digitales diseñadas para fortalecer la presencia de tu empresa, generar confianza y convertir visitantes en oportunidades de negocio.",
-      bullets: [
-        "Sitios Corporativos",
-        "Landing Pages",
-        "E-Commerce",
-        "Plataformas Web",
-        "Diseño Responsive",
-        "Optimización Web",
+        "Sistema para el rastreo de unidades. Si ya cuentas con dispositivos GPS, podemos conectar tu operación y crear una plataforma para monitorear tus unidades desde un solo lugar.",
+      image: "/images/proyectos/tracking-gps.jpg",
+      tags: [
+        "Rastreo GPS",
+        "Monitoreo",
+        "Unidades",
+        "Plataforma Web",
       ],
     },
 
     {
       id: 3,
       numero: "03",
-      type: "Software Empresarial",
-      image: "/images/servicios/empresarial.jpg",
-      title: "Software Empresarial Listo para Implementar",
+      categoria: "Sistema ERP",
+      title: "SideXC",
       description:
-        "Implementamos soluciones empresariales probadas para administrar clientes, operaciones, inventarios y procesos clave, reduciendo tiempos de implementación y facilitando el crecimiento de tu empresa.",
-      bullets: [
-        "CRM",
-        "Control de Inventarios",
-        "Gestión de Clientes",
-        "Seguimiento de Operaciones",
-        "Reportes y Dashboards",
-        "Administración Empresarial",
+        "Sistema ERP para centralizar el control de inventarios, clientes, licitaciones y compras, ayudando a mantener la información de la operación organizada en una sola plataforma.",
+      image: "/images/proyectos/sidexc.jpg",
+      tags: [
+        "Inventarios",
+        "Clientes",
+        "Licitaciones",
+        "Compras",
       ],
     },
 
     {
       id: 4,
       numero: "04",
-      type: "Automatización e Integración",
-      image: "/images/servicios/consultoria.jpg",
-      title: "Automatización e Integración de Procesos",
+      categoria: "Agenda y Citas",
+      title: "CITA",
       description:
-        "Conectamos herramientas, sistemas e información para reducir tareas repetitivas, evitar capturas duplicadas y hacer que los procesos de tu empresa sean más rápidos, ordenados y eficientes.",
-      bullets: [
-        "Automatización de Procesos",
-        "Integración de Sistemas",
-        "APIs",
-        "Flujos de Trabajo",
-        "Sincronización de Información",
-        "Reducción de Tareas Manuales",
+        "Sistema de agenda y gestión de citas diseñado para consultorios, profesionales y negocios que necesitan organizar sus horarios, servicios y atención de clientes.",
+      image: "/images/proyectos/cita.jpg",
+      tags: [
+        "Agenda",
+        "Citas",
+        "Consultorios",
+        "Eventos",
       ],
     },
   ];
 
   return (
     <section
-      id="servicios"
+      id="proyectos"
       className="bg-white py-28 lg:py-36"
       data-aos="fade-up"
     >
@@ -101,24 +93,24 @@ export default function Servicios() {
               border
               border-[var(--vekcia-bg)]
               text-[var(--vekcia-bg)]
-              mb-8
             "
           >
-            Soluciones
+            Proyectos y Soluciones
           </span>
 
           <h2
             className="
+              mt-8
               text-5xl
               md:text-6xl
               lg:text-7xl
               font-black
-              text-slate-900
-              leading-[1.02]
               tracking-tight
+              leading-[1.02]
+              text-slate-900
             "
           >
-            Tecnología diseñada para resolver necesidades reales.
+            Tecnología aplicada a necesidades reales.
           </h2>
 
           <div
@@ -134,35 +126,33 @@ export default function Servicios() {
 
           <p
             className="
+              max-w-4xl
               text-xl
               lg:text-2xl
-              text-slate-600
               leading-9
-              max-w-4xl
+              text-slate-600
             "
           >
-            Desde una presencia digital profesional hasta sistemas
-            empresariales y automatización de procesos, desarrollamos
-            soluciones de acuerdo con la realidad y los objetivos de
-            cada empresa.
+            Cada empresa tiene necesidades diferentes. Por eso
+            desarrollamos soluciones que pueden adaptarse desde una
+            presencia digital hasta plataformas y sistemas completos
+            para la operación.
           </p>
 
         </div>
 
-        {/* Servicios */}
+        {/* Proyectos */}
         <div className="space-y-28 lg:space-y-36">
 
-          {servicios.map((servicio, index) => (
-            <div
-              id={`servicio-${servicio.id}`}
-              key={servicio.id}
+          {proyectos.map((proyecto, index) => (
+            <article
+              key={proyecto.id}
               className="
                 grid
                 lg:grid-cols-[1.05fr_0.95fr]
                 gap-12
                 lg:gap-16
                 items-center
-                scroll-mt-24
               "
             >
 
@@ -177,23 +167,25 @@ export default function Servicios() {
                 <div
                   className="
                     relative
-                    h-[420px]
-                    md:h-[500px]
-                    lg:h-[560px]
+                    h-[300px]
+                    md:h-[420px]
+                    lg:h-[500px]
                     rounded-[32px]
                     lg:rounded-[36px]
                     overflow-hidden
-                    shadow-xl
                     border
                     border-slate-200
+                    shadow-xl
                     group
+                    bg-slate-100
                   "
                 >
 
                   <Image
-                    src={servicio.image}
-                    alt={servicio.title}
+                    src={proyecto.image}
+                    alt={`${proyecto.title} - VEKCIA`}
                     fill
+                    priority={index === 0}
                     className="
                       object-cover
                       transition-transform
@@ -203,15 +195,16 @@ export default function Servicios() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
 
-                  {/* Overlay */}
+                  {/* Overlay sutil */}
                   <div
                     className="
                       absolute
                       inset-0
                       bg-gradient-to-t
-                      from-slate-950/35
+                      from-slate-950/40
                       via-transparent
                       to-transparent
+                      pointer-events-none
                     "
                   />
 
@@ -235,7 +228,7 @@ export default function Servicios() {
                       shadow-lg
                     "
                   >
-                    {servicio.numero}
+                    {proyecto.numero}
                   </div>
 
                 </div>
@@ -261,22 +254,22 @@ export default function Servicios() {
                     mb-4
                   "
                 >
-                  {servicio.type}
+                  {proyecto.categoria}
                 </span>
 
                 <h3
                   className="
                     text-4xl
                     md:text-5xl
+                    lg:text-6xl
                     font-black
-                    text-slate-900
-                    mt-2
-                    mb-6
-                    leading-[1.05]
                     tracking-tight
+                    leading-[1.05]
+                    text-slate-900
+                    mb-6
                   "
                 >
-                  {servicio.title}
+                  {proyecto.title}
                 </h3>
 
                 <div
@@ -285,7 +278,7 @@ export default function Servicios() {
                     h-1
                     bg-[var(--vekcia-bg)]
                     rounded-full
-                    my-6
+                    mb-8
                   "
                 />
 
@@ -299,40 +292,36 @@ export default function Servicios() {
                     mb-8
                   "
                 >
-                  {servicio.description}
+                  {proyecto.description}
                 </p>
 
-                {/* Características */}
-                <div
-                  className="
-                    flex
-                    flex-wrap
-                    gap-3
-                  "
-                >
-                  {servicio.bullets.map((item) => (
+                {/* Tags */}
+                <div className="flex flex-wrap gap-3">
+
+                  {proyecto.tags.map((tag) => (
                     <span
-                      key={item}
+                      key={tag}
                       className="
                         px-4
                         py-2
                         rounded-full
+                        bg-slate-50
                         border
                         border-slate-200
-                        bg-slate-50
-                        text-slate-700
                         text-sm
                         font-medium
+                        text-slate-700
                       "
                     >
-                      {item}
+                      {tag}
                     </span>
                   ))}
+
                 </div>
 
               </div>
 
-            </div>
+            </article>
           ))}
 
         </div>
@@ -340,30 +329,42 @@ export default function Servicios() {
         {/* Cierre */}
         <div
           className="
-            mt-24
-            lg:mt-32
+            mt-28
+            lg:mt-36
             rounded-[32px]
-            bg-slate-50
-            border
-            border-slate-200
-            p-8
-            md:p-12
-            lg:p-14
+            bg-[var(--vekcia-bg)]
+            px-8
+            py-14
+            md:px-12
+            lg:px-20
             text-center
+            text-white
           "
         >
 
+          <span
+            className="
+              text-xs
+              font-bold
+              tracking-[0.25em]
+              uppercase
+              text-white/70
+            "
+          >
+            Tu próximo proyecto
+          </span>
+
           <h3
             className="
+              mt-5
               text-3xl
               md:text-4xl
               lg:text-5xl
               font-black
-              text-slate-900
               tracking-tight
             "
           >
-            ¿No sabes qué solución necesita tu empresa?
+            Cuéntanos qué necesitas mejorar.
           </h3>
 
           <p
@@ -373,13 +374,12 @@ export default function Servicios() {
               mt-5
               text-lg
               lg:text-xl
-              text-slate-600
               leading-8
+              text-white/80
             "
           >
-            No necesitas definir la tecnología. Cuéntanos cómo funciona
-            actualmente tu operación y nosotros analizamos contigo las
-            oportunidades de mejora.
+            Podemos analizar tu proceso actual y proponerte una solución
+            tecnológica de acuerdo con las necesidades reales de tu empresa.
           </p>
 
           <a
@@ -392,13 +392,13 @@ export default function Servicios() {
               px-7
               py-3.5
               rounded-full
-              bg-[var(--vekcia-bg)]
-              text-white
+              bg-white
+              text-[var(--vekcia-bg)]
               font-bold
               transition-all
               duration-300
               hover:-translate-y-1
-              hover:shadow-lg
+              hover:shadow-xl
             "
           >
             Hablemos

@@ -13,7 +13,7 @@
 }
 
 :root {
-  --vekcia-bg: #0f172a;
+  --vekcia-bg: #0F4C81;
 
   --vekcia-green: #00C16A;
   --vekcia-blue: #0F4C81;
@@ -45,6 +45,10 @@ body {
   .vekcia-container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .hero .swiper-button-prev,
+  .hero .swiper-button-next {
+    display: none;
   }
 }
 
@@ -83,112 +87,6 @@ body {
   line-height: 0.9;
 }
 
-.hero {
-  background: #fff;
-}
-
-.hero-slide {
-  position: relative;
-  min-height: calc(100vh - 80px);
-
-  display: flex;
-  align-items: center;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  padding: 0 8%;
-}
-
-/* Overlay más elegante */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(90deg,
-      rgba(2, 15, 38, .78) 0%,
-      rgba(2, 15, 38, .55) 30%,
-      rgba(2, 15, 38, .20) 60%,
-      rgba(2, 15, 38, .05) 100%);
-}
-
-/* Tarjeta */
-.hero-content-card {
-  position: relative;
-  z-index: 2;
-
-  max-width: 500px;
-
-  background: rgba(255, 255, 255, .96);
-
-  padding: 42px 48px;
-
-  border-radius: 24px;
-
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, .18);
-
-  backdrop-filter: blur(12px);
-
-  animation: heroFade .8s ease;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-/* Badge */
-.hero-content-card span {
-  letter-spacing: .25em;
-}
-
-/* Título */
-.hero-content-card h2 {
-  margin-top: 12px;
-  margin-bottom: 20px;
-}
-
-/* Texto */
-.hero-content-card p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #475569;
-}
-
-/* Animación */
-@keyframes heroFade {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Flechas */
-.swiper-button-prev,
-.swiper-button-next {
-  color: var(--vekcia-bg) !important;
-  transform: scale(.9);
-}
-
-/* Bullets */
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--vekcia-bg) !important;
-  transform: scale(1.2);
-}
 
 .about-text {
   font-size: 2.2rem;
@@ -324,4 +222,477 @@ h2 {
   to {
     transform: translateX(-50%);
   }
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  width: 100%;
+  background: #06152b;
+  overflow: hidden;
+}
+
+.hero .swiper {
+  width: 100%;
+}
+
+.hero .swiper-slide {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------
+   Hero Slide
+   --------------------------------------------------------- */
+
+.hero-slide {
+  position: relative;
+  width: 100%;
+  min-height: min(820px, calc(100vh - 64px));
+
+  display: flex;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  padding: 80px 8%;
+}
+
+/* ---------------------------------------------------------
+   Overlay
+   --------------------------------------------------------- */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 18, 42, 0.94) 0%,
+      rgba(3, 18, 42, 0.82) 28%,
+      rgba(3, 18, 42, 0.48) 52%,
+      rgba(3, 18, 42, 0.12) 78%,
+      rgba(3, 18, 42, 0.02) 100%
+    );
+}
+
+/* ---------------------------------------------------------
+   Content Wrapper
+   --------------------------------------------------------- */
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+   Content Card
+   --------------------------------------------------------- */
+
+.hero-content-card {
+  width: min(520px, 100%);
+
+  background: rgba(255, 255, 255, 0.97);
+
+  padding: 48px;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(12px);
+
+  animation: heroFade 0.8s ease;
+}
+
+/* ---------------------------------------------------------
+   Brand
+   --------------------------------------------------------- */
+
+.hero-brand {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: var(--vekcia-bg);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   Title
+   --------------------------------------------------------- */
+
+.hero-content-card h1 {
+  margin: 0;
+
+  color: #081221;
+
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+
+  font-weight: 900;
+
+  letter-spacing: -0.045em;
+
+  line-height: 0.98;
+}
+
+/* ---------------------------------------------------------
+   Accent Line
+   --------------------------------------------------------- */
+
+.hero-line {
+  width: 72px;
+  height: 4px;
+
+  margin: 26px 0;
+
+  background: var(--vekcia-bg);
+
+  border-radius: 999px;
+}
+
+/* ---------------------------------------------------------
+   Description
+   --------------------------------------------------------- */
+
+.hero-content-card p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 1.1rem;
+
+  line-height: 1.75;
+}
+
+/* ---------------------------------------------------------
+   Actions
+   --------------------------------------------------------- */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+
+  margin-top: 30px;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 22px;
+
+  border-radius: 999px;
+
+  background: #081221;
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-button span {
+  font-size: 1.2rem;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.hero-button:hover {
+  background: var(--vekcia-bg);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.hero-button:hover span {
+  transform: translateX(4px);
+}
+
+/* ---------------------------------------------------------
+   Animation
+   --------------------------------------------------------- */
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   Swiper Navigation
+   --------------------------------------------------------- */
+
+.hero .swiper-button-prev,
+.hero .swiper-button-next {
+  color: white !important;
+
+  width: 44px;
+  height: 44px;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero .swiper-button-prev:hover,
+.hero .swiper-button-next:hover {
+  transform: scale(1.08);
+}
+
+.hero .swiper-button-prev::after,
+.hero .swiper-button-next::after {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   Swiper Pagination
+   --------------------------------------------------------- */
+
+.hero .swiper-pagination {
+  position: absolute !important;
+
+  bottom: 24px !important;
+
+  margin: 0 !important;
+}
+
+.hero .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+
+  background: white;
+
+  opacity: 0.55;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.hero .swiper-pagination-bullet-active {
+  background: white !important;
+
+  opacity: 1;
+
+  transform: scale(1.25);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .hero-slide {
+    min-height: 700px;
+
+    padding: 60px 6%;
+  }
+
+  .hero-content-card {
+    width: min(500px, 65%);
+    padding: 40px;
+  }
+
+  .hero-content-card h1 {
+    font-size: clamp(2.6rem, 5vw, 4rem);
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero-slide {
+    min-height: 720px;
+
+    align-items: flex-end;
+
+    padding: 32px 20px 70px;
+
+    /*
+      En móvil colocamos el punto de interés
+      de la imagen ligeramente hacia la derecha.
+    */
+    background-position: 62% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 18, 42, 0.15) 0%,
+        rgba(3, 18, 42, 0.25) 25%,
+        rgba(3, 18, 42, 0.72) 58%,
+        rgba(3, 18, 42, 0.96) 100%
+      );
+  }
+
+  .hero-content-wrapper {
+    display: flex;
+
+    justify-content: center;
+  }
+
+  .hero-content-card {
+    width: 100%;
+
+    padding: 28px 24px;
+
+    border-radius: 24px;
+
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.28);
+  }
+
+  .hero-brand {
+    margin-bottom: 14px;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.22em;
+  }
+
+  .hero-content-card h1 {
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+  }
+
+  .hero-line {
+    width: 56px;
+
+    height: 3px;
+
+    margin: 20px 0;
+  }
+
+  .hero-content-card p {
+    font-size: 1rem;
+
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+  }
+
+  .hero-button {
+    width: 100%;
+
+    justify-content: center;
+
+    padding: 13px 18px;
+
+    font-size: 0.9rem;
+  }
+
+  /*
+    Las flechas pueden estorbar en pantallas pequeñas.
+    Dejamos el slider controlable mediante los indicadores.
+  */
+
+  .hero .swiper-button-prev,
+  .hero .swiper-button-next {
+    width: 34px;
+    height: 34px;
+
+    top: 43%;
+  }
+
+  .hero .swiper-button-prev {
+    left: 4px;
+  }
+
+  .hero .swiper-button-next {
+    right: 4px;
+  }
+
+  .hero .swiper-button-prev::after,
+  .hero .swiper-button-next::after {
+    font-size: 18px;
+  }
+
+  .hero .swiper-pagination {
+    bottom: 22px !important;
+  }
+
+}
+
+/* =========================================================
+   MOBILE SMALL
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .hero-slide {
+    min-height: 680px;
+
+    padding:
+      24px
+      16px
+      64px;
+
+    background-position: 60% center;
+  }
+
+  .hero-content-card {
+    padding: 24px 20px;
+
+    border-radius: 22px;
+  }
+
+  .hero-content-card h1 {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+  }
+
+  .hero-content-card p {
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+  }
+
+  .hero-button {
+    font-size: 0.85rem;
+  }
+
 }

@@ -1,35 +1,39 @@
 import {
-  Handshake,
+  Lightbulb,
+  Code2,
   Building2,
-  Network,
-  TrendingUp,
+  Rocket,
 } from "lucide-react";
 
 export default function Metas() {
   const pilares = [
     {
-      icon: Handshake,
-      title: "Generación de Oportunidades",
+      number: "01",
+      icon: Lightbulb,
+      title: "Innovación Tecnológica",
       description:
-        "Conectamos empresas, emprendedores y especialistas para impulsar nuevas oportunidades comerciales.",
+        "Aplicamos tecnología e innovación para optimizar procesos, reducir tiempos operativos y generar ventajas competitivas para nuestros clientes.",
     },
     {
+      number: "02",
+      icon: Code2,
+      title: "Software a la Medida",
+      description:
+        "Creamos soluciones de software adaptadas a la operación de cada empresa, integrando procesos, datos y necesidades específicas del negocio.",
+    },
+    {
+      number: "03",
       icon: Building2,
-      title: "Alianzas Estratégicas",
+      title: "Soluciones Empresariales",
       description:
-        "Construimos relaciones de valor que fortalecen el crecimiento y la expansión de nuestros clientes.",
+        "Implementamos sistemas empresariales para CRM, inventarios, logística, seguimiento de operaciones y gestión de clientes.",
     },
     {
-      icon: Network,
-      title: "Innovación y Tecnología",
+      number: "04",
+      icon: Rocket,
+      title: "Compromiso y Evolución",
       description:
-        "Integramos soluciones tecnológicas y automatización para acelerar resultados.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Crecimiento Empresarial",
-      description:
-        "Impulsamos la evolución de negocios mediante estrategias enfocadas en escalabilidad y rentabilidad.",
+        "Construimos relaciones de largo plazo mediante soporte continuo, mejora constante y tecnología preparada para crecer junto a tu empresa.",
     },
   ];
 
@@ -50,7 +54,7 @@ export default function Metas() {
             -translate-x-1/2
             w-[900px]
             h-[900px]
-            bg-emerald-500/5
+            bg-blue-500/5
             blur-[180px]
           "
         />
@@ -85,14 +89,16 @@ export default function Metas() {
               font-semibold
               tracking-[0.2em]
               uppercase
-              bg-slate-100
+              bg-blue-50
               border
-              border-slate-200
-              text-slate-700
+              border-[var(--vekcia-bg)]
               mb-8
             "
+            style={{
+              color: "var(--vekcia-bg)",
+            }}
           >
-            Nuestros Pilares
+            Nuestra Propuesta de Valor
           </span>
 
           <h2
@@ -106,7 +112,7 @@ export default function Metas() {
               mb-8
             "
           >
-            Impulsamos el crecimiento a través de un ecosistema diseñado para generar valor.
+            Transformamos desafíos empresariales en soluciones tecnológicas.
           </h2>
 
           <p
@@ -117,9 +123,12 @@ export default function Metas() {
               leading-9
             "
           >
-            Combinamos relaciones estratégicas, innovación y visión empresarial
-            para crear oportunidades sostenibles de crecimiento para empresas,
-            emprendedores y organizaciones.
+            Ayudamos a empresas a optimizar procesos,
+mejorar la productividad y acelerar su
+transformación digital mediante software,
+plataformas empresariales, sitios web y
+soluciones tecnológicas diseñadas para generar
+resultados reales.
           </p>
 
         </div>
@@ -132,7 +141,7 @@ export default function Metas() {
 
             return (
               <div
-                key={item.title}
+                key={item.number}
                 className="
                   group
                   relative
@@ -158,8 +167,8 @@ export default function Metas() {
                     h-1
                     w-full
                     bg-gradient-to-r
-                    from-emerald-500
-                    via-green-500
+                    from-[var(--vekcia-bg)]
+                    via-darkblue-500
                     to-transparent
                   "
                 />
@@ -180,7 +189,7 @@ export default function Metas() {
                   "
                 >
                   <Icon
-                    className="
+                  className="
                       transition-all
                       duration-300
                       group-hover:scale-110

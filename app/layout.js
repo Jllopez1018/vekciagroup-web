@@ -7,28 +7,29 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: 'VEKCIA Group | Tecnología, Seguros y Soluciones Empresariales',
+  title: 'VEKCIA Tech | Desarrollo de Software, IA y Soluciones Empresariales',
   description:
-    'Grupo empresarial especializado en tecnología, seguros, rastreo GPS y transformación digital. Impulsamos empresas mediante software, automatización, análisis de datos y soluciones estratégicas para su crecimiento.',
+    'Desarrollamos software a la medida, aplicaciones web, plataformas empresariales, inteligencia artificial, automatización de procesos, integraciones y soluciones tecnológicas para empresas en crecimiento.',
   keywords: [
-    'vekcia group',
-    'grupo empresarial',
-    'tecnologia',
-    'seguros',
-    'gps',
     'desarrollo de software',
-    'transformacion digital',
-    'automatizacion',
+    'software a la medida',
+    'desarrollo web',
+    'nextjs',
+    'react',
     'inteligencia artificial',
-    'telemetria',
-    'consultoria empresarial',
-    'soluciones empresariales'
+    'automatizacion',
+    'erp',
+    'crm',
+    'aplicaciones empresariales',
+    'transformacion digital',
+    'consultoria tecnologica',
+    'vekcia tech'
   ],
   icons: {
     icon: "/logos/logo-fav.png",
     shortcut: "/logos/logo-fav.png",
     apple: "/logos/logo-fav.png",
-  }
+  },
 }
 
 export default function RootLayout({ children }) {

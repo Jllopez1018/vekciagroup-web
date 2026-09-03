@@ -13,55 +13,104 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <div className="flex items-center gap-3">
-
+          <div className="flex items-center">
             <img
               src="/logos/logo-texto.png"
               alt="VEKCIA"
               className="h-10 w-auto"
             />
-
-            <span
-              className="
-                hidden
-                sm:block
-                text-lg
-                font-bold
-                uppercase
-                tracking-[0.25em]
-                text-slate-300
-              "
-            >
-              Group
-            </span>
-
           </div>
 
           {/* Desktop */}
-          <ul className="hidden md:flex items-center gap-10 text-white font-semibold">
-            <li>
-              <a href="#nosotros" className="hover:opacity-80">
-                Nosotros
-              </a>
-            </li>
+          <div className="hidden md:flex items-center gap-8">
 
-            <li>
-              <a href="#metas" className="hover:opacity-80">
-                Pilares
-              </a>
-            </li>
+            <ul className="flex items-center gap-8 text-white font-semibold">
 
-            <li>
-              <a href="#servicios" className="hover:opacity-80">
-                Servicios
-              </a>
-            </li>
-          </ul>
+              <li>
+                <a
+                  href="#nosotros"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  Nosotros
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#proceso"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  Cómo trabajamos
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#servicios"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  Soluciones
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#paquetes"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  Paquetes
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#proyectos"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  Proyectos
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#clientes"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  Clientes
+                </a>
+              </li>
+
+            </ul>
+
+            {/* CTA */}
+            <a
+              href="#contacto"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                px-5
+                py-2.5
+                rounded-full
+                bg-white
+                text-[var(--vekcia-bg)]
+                font-bold
+                transition-all
+                duration-300
+                hover:scale-105
+                hover:shadow-lg
+              "
+            >
+              Hablemos
+            </a>
+
+          </div>
 
           {/* Mobile Button */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden text-white"
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
           >
             {open ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -88,11 +137,11 @@ export default function Navbar() {
 
             <li>
               <a
-                href="#metas"
+                href="#proceso"
                 onClick={() => setOpen(false)}
                 className="block px-6 py-3 text-white"
               >
-                Metas
+                Cómo trabajamos
               </a>
             </li>
 
@@ -102,7 +151,58 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="block px-6 py-3 text-white"
               >
-                Servicios
+                Soluciones
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#paquetes"
+                onClick={() => setOpen(false)}
+                className="block px-6 py-3 text-white"
+              >
+                Paquetes
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#proyectos"
+                onClick={() => setOpen(false)}
+                className="block px-6 py-3 text-white"
+              >
+                Proyectos
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#clientes"
+                onClick={() => setOpen(false)}
+                className="block px-6 py-3 text-white"
+              >
+                Clientes
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#contacto"
+                onClick={() => setOpen(false)}
+                className="
+                  block
+                  mx-6
+                  mt-3
+                  px-6
+                  py-3
+                  rounded-full
+                  bg-white
+                  text-[var(--vekcia-bg)]
+                  text-center
+                  font-bold
+                "
+              >
+                Hablemos
               </a>
             </li>
 
@@ -110,6 +210,7 @@ export default function Navbar() {
 
         </div>
       )}
+
     </nav>
   );
 }

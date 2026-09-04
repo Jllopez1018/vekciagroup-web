@@ -696,3 +696,35 @@ h2 {
   }
 
 }
+
+/* Evitar desplazamiento horizontal en dispositivos móviles */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+.hero {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-slide {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}

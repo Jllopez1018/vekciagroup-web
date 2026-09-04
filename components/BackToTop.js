@@ -31,11 +31,15 @@ export default function BackToTop() {
       aria-label="Volver arriba"
       className="
         fixed
-        bottom-8
-        right-8
-        z-50
+        bottom-5
+        right-5
+        md:bottom-8
+        md:right-8
+        z-[9999]
         w-14
         h-14
+        min-w-14
+        min-h-14
         rounded-full
         bg-[var(--vekcia-bg)]
         text-white

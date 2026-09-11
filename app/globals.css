@@ -87,6 +87,334 @@ body {
   line-height: 0.9;
 }
 
+.hero {
+  position: relative;
+  background: #fff;
+}
+
+.hero-slide {
+  position: relative;
+  min-height: calc(100vh - 50px);
+
+  display: flex;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 80px 8% 70px;
+}
+
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 18, 35, 0.78) 0%,
+      rgba(3, 18, 35, 0.60) 28%,
+      rgba(3, 18, 35, 0.28) 55%,
+      rgba(3, 18, 35, 0.05) 100%
+    );
+
+  z-index: 1;
+}
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(620px, 100%);
+
+  padding: 0;
+
+  animation: heroFade 0.8s ease;
+}
+
+/* =========================================================
+   KICKER
+   ========================================================= */
+
+.hero-kicker {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--vekcia-green);
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.hero-title {
+  margin: 0 0 24px;
+
+  max-width: 650px;
+
+  color: #ffffff;
+
+  font-size: clamp(3.4rem, 5.5vw, 5.4rem);
+
+  font-weight: 900;
+
+  letter-spacing: -0.045em;
+
+  line-height: 0.94;
+
+  text-wrap: balance;
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.hero-subtitle {
+  max-width: 590px;
+
+  margin: 0;
+
+  color: #d7e2ec;
+
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+
+  font-weight: 500;
+
+  line-height: 1.65;
+
+  letter-spacing: 0.005em;
+
+  text-shadow:
+    0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.hero-button {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 32px;
+
+  padding: 14px 24px;
+
+  background: var(--vekcia-green);
+
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: 0;
+
+  box-shadow:
+    0 8px 24px rgba(0, 193, 106, 0.22);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-button:hover {
+  background: #00ad5f;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 193, 106, 0.30);
+}
+
+.hero-button-arrow {
+  font-size: 1.25rem;
+  line-height: 1;
+
+  transition: transform 0.25s ease;
+}
+
+.hero-button:hover .hero-button-arrow {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   SWIPER ARROWS
+   ========================================================= */
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--vekcia-green) !important;
+
+  transform: scale(0.82);
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(0.95);
+}
+
+/* =========================================================
+   SWIPER PAGINATION
+   ========================================================= */
+
+.swiper-pagination {
+  position: absolute !important;
+
+  bottom: 24px !important;
+
+  left: 0;
+
+  width: 100%;
+
+  margin: 0 !important;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  opacity: 1;
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.swiper-pagination-bullet-active {
+  width: 24px;
+
+  border-radius: 10px;
+
+  background: var(--vekcia-green) !important;
+}
+
+/* =========================================================
+   HERO - MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero-slide {
+    min-height: calc(100svh - 50px);
+    padding: 0 26px;
+    align-items: center;
+    background-position: center center;
+  }
+
+  .hero-content-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-top: 40px;
+  }
+
+  .hero-content-card span {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+  }
+
+  .hero-content-card h2 {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+    line-height: 0.94;
+    letter-spacing: -0.045em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    max-width: 330px;
+  }
+
+  .hero-content-card p {
+    font-size: 1rem;
+    line-height: 1.55;
+    max-width: 330px;
+    margin-bottom: 0;
+  }
+
+  .hero-content-card a {
+    margin-top: 22px;
+    padding: 11px 18px;
+    font-size: 0.9rem;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 15, 38, .72) 0%,
+        rgba(2, 15, 38, .48) 55%,
+        rgba(2, 15, 38, .20) 100%
+      );
+  }
+
+  .swiper-pagination {
+    margin-top: 0;
+    bottom: 18px !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+}
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
 .about-text {
   font-size: 2.2rem;
@@ -225,506 +553,9 @@ h2 {
 }
 
 /* =========================================================
-   HERO
+   ANCHOR OFFSET - STICKY NAVBAR
    ========================================================= */
 
-.hero {
-  width: 100%;
-  background: #06152b;
-  overflow: hidden;
-}
-
-.hero .swiper {
-  width: 100%;
-}
-
-.hero .swiper-slide {
-  width: 100%;
-}
-
-/* ---------------------------------------------------------
-   Hero Slide
-   --------------------------------------------------------- */
-
-.hero-slide {
-  position: relative;
-  width: 100%;
-  min-height: min(820px, calc(100vh - 64px));
-
-  display: flex;
-  align-items: center;
-
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  padding: 80px 8%;
-}
-
-/* ---------------------------------------------------------
-   Overlay
-   --------------------------------------------------------- */
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(3, 18, 42, 0.94) 0%,
-      rgba(3, 18, 42, 0.82) 28%,
-      rgba(3, 18, 42, 0.48) 52%,
-      rgba(3, 18, 42, 0.12) 78%,
-      rgba(3, 18, 42, 0.02) 100%
-    );
-}
-
-/* ---------------------------------------------------------
-   Content Wrapper
-   --------------------------------------------------------- */
-
-.hero-content-wrapper {
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
-  max-width: 1440px;
-
-  margin: 0 auto;
-}
-
-/* ---------------------------------------------------------
-   Content Card
-   --------------------------------------------------------- */
-
-.hero-content-card {
-  width: min(520px, 100%);
-
-  background: rgba(255, 255, 255, 0.97);
-
-  padding: 48px;
-
-  border-radius: 28px;
-
-  box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.25);
-
-  backdrop-filter: blur(12px);
-
-  animation: heroFade 0.8s ease;
-}
-
-/* ---------------------------------------------------------
-   Brand
-   --------------------------------------------------------- */
-
-.hero-brand {
-  display: inline-block;
-
-  margin-bottom: 18px;
-
-  color: var(--vekcia-bg);
-
-  font-size: 0.75rem;
-  font-weight: 800;
-
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-}
-
-/* ---------------------------------------------------------
-   Title
-   --------------------------------------------------------- */
-
-.hero-content-card h1 {
-  margin: 0;
-
-  color: #081221;
-
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-
-  font-weight: 900;
-
-  letter-spacing: -0.045em;
-
-  line-height: 0.98;
-}
-
-/* ---------------------------------------------------------
-   Accent Line
-   --------------------------------------------------------- */
-
-.hero-line {
-  width: 72px;
-  height: 4px;
-
-  margin: 26px 0;
-
-  background: var(--vekcia-bg);
-
-  border-radius: 999px;
-}
-
-/* ---------------------------------------------------------
-   Description
-   --------------------------------------------------------- */
-
-.hero-content-card p {
-  margin: 0;
-
-  color: #475569;
-
-  font-size: 1.1rem;
-
-  line-height: 1.75;
-}
-
-/* ---------------------------------------------------------
-   Actions
-   --------------------------------------------------------- */
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-
-  margin-top: 30px;
-}
-
-.hero-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 14px 22px;
-
-  border-radius: 999px;
-
-  background: #081221;
-  color: white;
-
-  font-size: 0.95rem;
-  font-weight: 700;
-
-  text-decoration: none;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.hero-button span {
-  font-size: 1.2rem;
-
-  transition:
-    transform 0.3s ease;
-}
-
-.hero-button:hover {
-  background: var(--vekcia-bg);
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.18);
-}
-
-.hero-button:hover span {
-  transform: translateX(4px);
-}
-
-/* ---------------------------------------------------------
-   Animation
-   --------------------------------------------------------- */
-
-@keyframes heroFade {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ---------------------------------------------------------
-   Swiper Navigation
-   --------------------------------------------------------- */
-
-.hero .swiper-button-prev,
-.hero .swiper-button-next {
-  color: white !important;
-
-  width: 44px;
-  height: 44px;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-.hero .swiper-button-prev:hover,
-.hero .swiper-button-next:hover {
-  transform: scale(1.08);
-}
-
-.hero .swiper-button-prev::after,
-.hero .swiper-button-next::after {
-  font-size: 22px;
-  font-weight: 700;
-}
-
-/* ---------------------------------------------------------
-   Swiper Pagination
-   --------------------------------------------------------- */
-
-.hero .swiper-pagination {
-  position: absolute !important;
-
-  bottom: 24px !important;
-
-  margin: 0 !important;
-}
-
-.hero .swiper-pagination-bullet {
-  width: 9px;
-  height: 9px;
-
-  background: white;
-
-  opacity: 0.55;
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-
-.hero .swiper-pagination-bullet-active {
-  background: white !important;
-
-  opacity: 1;
-
-  transform: scale(1.25);
-}
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 1024px) {
-
-  .hero-slide {
-    min-height: 700px;
-
-    padding: 60px 6%;
-  }
-
-  .hero-content-card {
-    width: min(500px, 65%);
-    padding: 40px;
-  }
-
-  .hero-content-card h1 {
-    font-size: clamp(2.6rem, 5vw, 4rem);
-  }
-
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  .hero-slide {
-    min-height: 720px;
-
-    align-items: flex-end;
-
-    padding: 32px 20px 70px;
-
-    /*
-      En móvil colocamos el punto de interés
-      de la imagen ligeramente hacia la derecha.
-    */
-    background-position: 62% center;
-  }
-
-  .hero-overlay {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(3, 18, 42, 0.15) 0%,
-        rgba(3, 18, 42, 0.25) 25%,
-        rgba(3, 18, 42, 0.72) 58%,
-        rgba(3, 18, 42, 0.96) 100%
-      );
-  }
-
-  .hero-content-wrapper {
-    display: flex;
-
-    justify-content: center;
-  }
-
-  .hero-content-card {
-    width: 100%;
-
-    padding: 28px 24px;
-
-    border-radius: 24px;
-
-    box-shadow:
-      0 20px 50px rgba(0, 0, 0, 0.28);
-  }
-
-  .hero-brand {
-    margin-bottom: 14px;
-
-    font-size: 0.68rem;
-
-    letter-spacing: 0.22em;
-  }
-
-  .hero-content-card h1 {
-    font-size: clamp(2.2rem, 9vw, 3.2rem);
-
-    line-height: 1;
-
-    letter-spacing: -0.04em;
-  }
-
-  .hero-line {
-    width: 56px;
-
-    height: 3px;
-
-    margin: 20px 0;
-  }
-
-  .hero-content-card p {
-    font-size: 1rem;
-
-    line-height: 1.65;
-  }
-
-  .hero-actions {
-    margin-top: 24px;
-  }
-
-  .hero-button {
-    width: 100%;
-
-    justify-content: center;
-
-    padding: 13px 18px;
-
-    font-size: 0.9rem;
-  }
-
-  /*
-    Las flechas pueden estorbar en pantallas pequeñas.
-    Dejamos el slider controlable mediante los indicadores.
-  */
-
-  .hero .swiper-button-prev,
-  .hero .swiper-button-next {
-    width: 34px;
-    height: 34px;
-
-    top: 43%;
-  }
-
-  .hero .swiper-button-prev {
-    left: 4px;
-  }
-
-  .hero .swiper-button-next {
-    right: 4px;
-  }
-
-  .hero .swiper-button-prev::after,
-  .hero .swiper-button-next::after {
-    font-size: 18px;
-  }
-
-  .hero .swiper-pagination {
-    bottom: 22px !important;
-  }
-
-}
-
-/* =========================================================
-   MOBILE SMALL
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  .hero-slide {
-    min-height: 680px;
-
-    padding:
-      24px
-      16px
-      64px;
-
-    background-position: 60% center;
-  }
-
-  .hero-content-card {
-    padding: 24px 20px;
-
-    border-radius: 22px;
-  }
-
-  .hero-content-card h1 {
-    font-size: clamp(2rem, 10vw, 2.7rem);
-  }
-
-  .hero-content-card p {
-    font-size: 0.95rem;
-
-    line-height: 1.6;
-  }
-
-  .hero-button {
-    font-size: 0.85rem;
-  }
-
-}
-
-/* Evitar desplazamiento horizontal en dispositivos móviles */
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-img,
-video,
-svg {
-  max-width: 100%;
-}
-
-.hero {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.hero-slide {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
+section[id] {
+  scroll-margin-top: 70px;
 }

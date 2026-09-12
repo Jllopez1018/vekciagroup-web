@@ -559,3 +559,39 @@ h2 {
 section[id] {
   scroll-margin-top: 70px;
 }
+
+/* =========================================================
+   MOBILE - EVITAR DESPLAZAMIENTO HORIZONTAL
+   ========================================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+.hero,
+.partners-slider {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-slide {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
